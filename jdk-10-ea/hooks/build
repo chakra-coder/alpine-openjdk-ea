@@ -1,0 +1,7 @@
+#!/bin/bash
+
+JDK_BUILD_VERSION="${DOCKER_TAG#*.}"
+
+docker build\
+  --build-arg JDK_BUILD_VERSION="$JDK_BUILD_VERSION"\
+  -t "$IMAGE_NAME" .
